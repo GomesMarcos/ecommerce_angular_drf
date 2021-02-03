@@ -12,12 +12,23 @@ class Venda(models.Model):
         _("Valor total da venda"), max_digits=99, decimal_places=2)
 
     class Meta:
-        verbose_name = 'Venda'
-        verbose_name_plural = 'Vendas'
+        verbose_name = _('Venda')
+        verbose_name_plural = _('Vendas')
+
+    def __str__(self):
+        return self.data
+    
 
 
 class Item(models.Model):
-    nome = models.CharField(_("nome do produto"), max_length=50)
+    produto = models.ForeignKey(Produto, verbose_name=_("Produto"), on_delete=models.PROTECT)
+    venda = models.ForeignKey(Venda, verbose_name=_("Venda"), on_delete=models.PROTECT)
+    nome = models.CharField(max_length=200)
+    quantidade = models.PositiveIntegerField(default=1)
     preco = models.DecimalField(
         _("preço do produto"), max_digits=99, decimal_places=2, editable=False)
-    descricao = models.TextField(_("descrição"))
+    imagem = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.nome
+    
