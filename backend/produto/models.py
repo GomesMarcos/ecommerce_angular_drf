@@ -21,6 +21,7 @@ class Produto(models.Model):
     quantidade_estoque = models.IntegerField(
         _("Quantidade em estoque"), default=0)
     imagem = models.ImageField(_("Imagem do produto"))
+    destaque = models.BooleanField(_("É destaque?"), default=False)
 
     class Meta:
         verbose_name = _("produto")

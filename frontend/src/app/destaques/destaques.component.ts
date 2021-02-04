@@ -22,8 +22,9 @@ export class DestaquesComponent implements OnInit {
 
   ngOnInit(): void {
     get(`${this.API_URL}produtos`).then((response) => {
-      response.data.forEach((data, index) => {
-        if (index < 2) this.destaques.push(data)
+      response.data.forEach((data) => {
+        // Populando array de destaques de acordo com os produtos com essa caracteróstica.
+        if (data.destaque) this.destaques.push(data)
       })
     })
   }
