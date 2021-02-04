@@ -1,4 +1,4 @@
-<ngb-carousel *ngIf="destaques" class="carousel slide mt-3 pt-3">
+<ngb-carousel *ngIf="destaques" class="carousel slide mb-5 pt-3">
   <ng-template ngbSlide *ngFor="let item of destaques">
     <div class="wrapper">
       <a href="#/produtos/{{ item.id }}">
@@ -9,8 +9,12 @@
       </a>
     </div>
     <div class="carousel-caption">
-      <h3>{{ item.nome }}</h3>
-      <p> {{ item.preco }}</p>
+      <h3>
+        {{ item.nome }}
+        <br />
+        <br />
+        R${{ item.preco }}
+      </h3>
     </div>
   </ng-template>
 </ngb-carousel>

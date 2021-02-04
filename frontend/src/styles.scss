@@ -2,3 +2,35 @@
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
+
+a:hover {
+  text-decoration: none;
+}
+
+// CUSTOM COLORS
+$green: #09be18;
+
+// TEXTS
+.produto-old-price {
+  @extend .text-muted;
+  text-decoration: line-through;
+}
+
+// OVERIDING CAROUSEL
+.carousel {
+  &-control-prev-icon {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Antu_arrow-right.svg/512px-Antu_arrow-right.svg.png');
+    width: 32px;
+    height: 32px;
+    transform: rotate(180deg);
+  }
+  &-control-next-icon {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Antu_arrow-right.svg/512px-Antu_arrow-right.svg.png');
+    width: 32px;
+    height: 32px;
+  }
+
+  &-indicators li {
+    background-color: $gray-800;
+  }
+}

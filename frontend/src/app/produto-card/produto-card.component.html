@@ -1,1 +1,124 @@
-<p>produto-card works!</p>
+<div class="container">
+  <div class="row align-items-center">
+    <div
+      class="col-12 col-sm-12 col-md-4 col-lg-3"
+      style="width: 18rem"
+      *ngFor="let item of produtos"
+    >
+      <div class="card card-produto">
+        <div class="card-oferta" *ngIf="item.preco_oferta > 0"><span>oferta!</span> </div>
+        <a href="#/produtos/{{ item.id }}">
+          <img src="{{ item.imagem }}" class="card-img-top" alt="{{ item.nome }}" />
+          <div class="card-body text-dark">
+            <h5 class="card-title">{{ item.nome }}</h5>
+            <div *ngIf="item.preco_oferta > 0">
+              <p class="card-text">
+                de <span class="produto-old-price">R${{ item.preco }}</span>
+                <br />
+                por
+              </p>
+              <h3 class="card-subtitle mb-2">R${{ item.preco_oferta }}</h3>
+            </div>
+            <div *ngIf="item.preco_oferta <= 0">
+              <h3 class="card-subtitle mb-2">R${{ item.preco }}</h3>
+            </div>
+          </div>
+          <div class="card-footer">
+            <button (click)="adicionarAoCarrinho(item.id)" class="btn btn-add-cart">comprar</button>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- REPETINDO PRA NÃO TER DE CADASTRAR MAIS PRODUTOS -->
+    <div
+      class="col-12 col-sm-12 col-md-4 col-lg-3"
+      style="width: 18rem"
+      *ngFor="let item of produtos"
+    >
+      <div class="card card-produto">
+        <div class="card-oferta" *ngIf="item.preco_oferta > 0"><span>oferta!</span> </div>
+        <a href="#/produtos/{{ item.id }}">
+          <img src="{{ item.imagem }}" class="card-img-top" alt="{{ item.nome }}" />
+          <div class="card-body text-dark">
+            <h5 class="card-title">{{ item.nome }}</h5>
+            <div *ngIf="item.preco_oferta > 0">
+              <p class="card-text">
+                de <span class="produto-old-price">R${{ item.preco }}</span>
+                <br />
+                por
+              </p>
+              <h3 class="card-subtitle mb-2">R${{ item.preco_oferta }}</h3>
+            </div>
+            <div *ngIf="item.preco_oferta <= 0">
+              <h3 class="card-subtitle mb-2">R${{ item.preco }}</h3>
+            </div>
+          </div>
+          <div class="card-footer">
+            <button (click)="adicionarAoCarrinho(item.id)" class="btn btn-add-cart">comprar</button>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div
+      class="col-12 col-sm-12 col-md-4 col-lg-3"
+      style="width: 18rem"
+      *ngFor="let item of produtos"
+    >
+      <div class="card card-produto">
+        <div class="card-oferta" *ngIf="item.preco_oferta > 0"><span>oferta!</span> </div>
+        <a href="#/produtos/{{ item.id }}">
+          <img src="{{ item.imagem }}" class="card-img-top" alt="{{ item.nome }}" />
+          <div class="card-body text-dark">
+            <h5 class="card-title">{{ item.nome }}</h5>
+            <div *ngIf="item.preco_oferta > 0">
+              <p class="card-text">
+                de <span class="produto-old-price">R${{ item.preco }}</span>
+                <br />
+                por
+              </p>
+              <h3 class="card-subtitle mb-2">R${{ item.preco_oferta }}</h3>
+            </div>
+            <div *ngIf="item.preco_oferta <= 0">
+              <h3 class="card-subtitle mb-2">R${{ item.preco }}</h3>
+            </div>
+          </div>
+          <div class="card-footer">
+            <button (click)="adicionarAoCarrinho(item.id)" class="btn btn-add-cart">comprar</button>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div
+      class="col-12 col-sm-12 col-md-4 col-lg-3"
+      style="width: 18rem"
+      *ngFor="let item of produtos"
+    >
+      <div class="card card-produto">
+        <div class="card-oferta" *ngIf="item.preco_oferta > 0"><span>oferta!</span> </div>
+        <a href="#/produtos/{{ item.id }}">
+          <img src="{{ item.imagem }}" class="card-img-top" alt="{{ item.nome }}" />
+          <div class="card-body text-dark">
+            <h5 class="card-title">{{ item.nome }}</h5>
+            <div *ngIf="item.preco_oferta > 0">
+              <p class="card-text">
+                de <span class="produto-old-price">R${{ item.preco }}</span>
+                <br />
+                por
+              </p>
+              <h3 class="card-subtitle mb-2">R${{ item.preco_oferta }}</h3>
+            </div>
+            <div *ngIf="item.preco_oferta <= 0">
+              <h3 class="card-subtitle mb-2">R${{ item.preco }}</h3>
+            </div>
+          </div>
+          <div class="card-footer">
+            <button (click)="adicionarAoCarrinho(item.id)" class="btn btn-add-cart">comprar</button>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-fetch *ngIf="is_fetching === true"></app-fetch>

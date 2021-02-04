@@ -1,0 +1,72 @@
+@import '../../styles.scss';
+
+$cardHeight: 560px;
+
+.card {
+  transition: ease 0.3s all;
+  border: none;
+  position: relative;
+  height: $cardHeight;
+
+  &-produto {
+    margin-bottom: 32px;
+
+    &:hover {
+      box-shadow: 15px 10px 10px lightgray;
+      z-index: 9;
+
+      .card-img-top {
+        transform: translateY(-15px);
+      }
+    }
+  }
+
+  &-img-top {
+    transition: 0.3s ease-in-out all;
+  }
+
+  &-subtitle {
+    color: $green;
+    margin: auto;
+  }
+
+  &-oferta {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: firebrick;
+    color: snow;
+    z-index: 9;
+    padding: 3rem;
+    border-radius: 50%;
+
+    span {
+      position: absolute;
+      top: 37%;
+      left: 0;
+      right: 0;
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  }
+
+  &-footer {
+    background-color: transparent;
+
+    .btn-add-cart {
+      width: 100%;
+      background-color: $green;
+      color: $white;
+      text-transform: uppercase;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    height: auto;
+    border: 1px solid lightgray;
+    padding: 1rem;
+  }
+}

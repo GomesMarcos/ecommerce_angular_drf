@@ -14,7 +14,7 @@ export class DestaquesComponent implements OnInit {
   destaques: Array<Object>
 
   constructor(config: NgbCarouselConfig) {
-    config.interval = 500000
+    config.interval = 4000
     config.keyboard = true
     config.pauseOnHover = true
     this.destaques = []
