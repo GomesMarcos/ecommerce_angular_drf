@@ -1,21 +1,30 @@
 import { Component, OnInit } from '@angular/core'
 import { environment } from '../../environments/environment'
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap'
 import get from 'axios'
 
 @Component({
   selector: 'app-destaques',
   templateUrl: './destaques.component.html',
   styleUrls: ['./destaques.component.scss'],
+  providers: [NgbCarouselConfig],
 })
 export class DestaquesComponent implements OnInit {
   private API_URL = environment.API_URL
   destaques: Array<Object>
-  constructor() {}
+
+  constructor(config: NgbCarouselConfig) {
+    config.interval = 500000
+    config.keyboard = true
+    config.pauseOnHover = true
+    this.destaques = []
+  }
 
   ngOnInit(): void {
     get(`${this.API_URL}produtos`).then((response) => {
-      this.destaques = response.data
-      console.log(this.destaques)
+      response.data.forEach((data, index) => {
+        if (index < 2) this.destaques.push(data)
+      })
     })
   }
 }

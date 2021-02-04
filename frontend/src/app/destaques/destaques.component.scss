@@ -1,0 +1,24 @@
+.carousel-item-image {
+  // height: 256px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
+.carousel-caption {
+  position: relative;
+  right: 0;
+  left: 0;
+  width: fit-content;
+  margin: auto;
+  h3,
+  p {
+    background-color: rgba(51, 51, 51, 0.5);
+    padding: 1rem;
+    border-radius: 5px;
+  }
+}
+
+.carousel-indicators {
+  background-color: rgb(51, 51, 51) !important;
+}
