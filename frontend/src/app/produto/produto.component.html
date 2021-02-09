@@ -1,0 +1,48 @@
+<h1 class="text-center mb-5">{{ produto.nome }}</h1>
+
+<div class="container">
+  <div class="row">
+    <!-- Imagem e Preço -->
+    <div class="col-12 col-md-6">
+      <img src="{{ produto.imagem }}" alt="{{ produto.nome }}" />
+    </div>
+    <div class="col-12 col-md-6">
+      <ng-container *ngIf="produto.preco_oferta; else precoUnico">
+        <span class="preco-antigo"> de R${{ produto.preco }} </span>
+        <h2 class="preco">por: R${{ produto.preco_oferta }}</h2>
+      </ng-container>
+      <ng-template #precoUnico>
+        <h2 class="preco">R${{ produto.preco }}</h2>
+      </ng-template>
+
+      <button class="btn btn-comprar"> comprar </button>
+    </div>
+
+    <!-- Descrição -->
+    <div class="col-12">
+      <p class="descricao">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias iure fugiat, perferendis
+        consequatur vitae natus in mollitia eius, minus pariatur eos incidunt dolores quis adipisci
+        reprehenderit eveniet laborum nemo modi?
+      </p>
+    </div>
+  </div>
+  <!-- Ficha Técninca -->
+  <div class="row ficha-tecnica">
+    <div class="col-12">
+      <h3 class="title-small">Ficha Técnica</h3>
+    </div>
+    <div class="col-12">
+      <p class="label">categoria</p>
+      <span>{{ produto.categoria }}</span>
+    </div>
+    <div class="col-12">
+      <p class="label">marca</p>
+      <span>{{ produto.marca }}</span>
+    </div>
+    <div class="col-12">
+      <p class="label">sku</p>
+      <span>{{ produto.sku }}</span>
+    </div>
+  </div>
+</div>

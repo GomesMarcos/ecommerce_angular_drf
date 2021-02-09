@@ -1,0 +1,49 @@
+@import '../../styles.scss';
+
+img {
+  width: 100%;
+}
+
+.preco {
+  color: #2d292a;
+  font-size: 32px;
+  font-style: normal;
+
+  &-antigo {
+    font-size: 14px;
+    color: lightgray;
+    text-decoration: line-through;
+  }
+}
+
+.descricao {
+  margin: 2rem 0;
+  line-height: 2rem;
+  font-size: 14px;
+  font-weight: lighter;
+}
+
+.title-small {
+  text-align: center;
+  font-size: 24px;
+}
+
+.ficha-tecnica {
+  .col-12 {
+    padding: 25px 32px;
+    font-size: 16px;
+    color: $mainText;
+
+    .label {
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+
+  &:nth-child(odd) {
+    background-color: #fff;
+  }
+  &:nth-child(even) {
+    background-color: lightgray;
+  }
+}

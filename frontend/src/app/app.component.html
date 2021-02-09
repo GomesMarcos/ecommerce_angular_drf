@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" aria-current="page" href="#">
+    <a class="navbar-brand" aria-current="page" routerLink="">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 24">
         <defs>
           <style>
@@ -17,12 +17,18 @@
       </svg>
     </a>
 
-    <a class="nav-link" href="#">carrinho</a>
+    <a class="nav-link" routerLink="carrinho/"
+      ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+        <path class="a" style="fill: none" d="M0,0H24V24H0Z"></path>
+        <path
+          style="fill: #ccc"
+          d="M7,18a2,2,0,1,0,2,2A2,2,0,0,0,7,18ZM1,2V4H3l3.6,7.59L5.25,14.04A1.933,1.933,0,0,0,5,15a2.006,2.006,0,0,0,2,2H19V15H7.42a.248.248,0,0,1-.25-.25l.03-.12L8.1,13h7.45a1.991,1.991,0,0,0,1.75-1.03l3.58-6.49A.977.977,0,0,0,21,5a1,1,0,0,0-1-1H5.21L4.27,2H1ZM17,18a2,2,0,1,0,2,2A2,2,0,0,0,17,18Z"
+        ></path></svg
+    ></a>
   </div>
 </nav>
 
-<app-destaques></app-destaques>
-<app-produto-card></app-produto-card>
+<router-outlet></router-outlet>
 
 <footer class="footer">
   <p>&copy; Made by Marcos gomeS</p>

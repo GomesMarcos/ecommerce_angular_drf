@@ -1,7 +1,7 @@
 <ngb-carousel *ngIf="destaques" class="carousel slide mb-5 pt-3">
   <ng-template ngbSlide *ngFor="let item of destaques">
     <div class="wrapper">
-      <a href="#/produtos/{{ item.id }}">
+      <a routerLink="produtos/{{ item.id }}">
         <div
           class="carousel-item-image"
           style="background-image: url('{{ item.imagem }}'); height: 256px;"
